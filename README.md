@@ -1,20 +1,15 @@
 # Ubuntu16.04-0day
 
 ### 漏洞范围： all 4.4 ubuntu aws instances are vulnerable
-### Jann Horn发现在某些情况下，Linux内核中的Berkeley Packet Filter（BPF）实现不正确地执行了符号扩展。本地攻击者可以使用它来导致拒绝服务（系统崩溃）或可能执行任意代码。（CVE-2017-16995）
+#### Jann Horn发现在某些情况下，Linux内核中的Berkeley Packet Filter（BPF）实现不正确地执行了符号扩展check_alu_op()。本地攻击者可以使用它来导致拒绝服务（系统崩溃）或可能执行任意代码。（CVE-2017-16995）
 
 <jannh@google.com>
 
-从v4.14开始，只要不是root的用户可以利用它
-
-非特权用户可以使用此漏洞在系统上升级其权限。设置参数“kernel.unprivileged_bpf_disabled = 1”通过限制对bpf（2）调用的访问来防止这种特权升级
-
-前提条件：unprivileged_bpf_disabled sysctl未设置
-
-Debian为此问题分配了CVE-2017-16995
-
+#### 前提条件：unprivileged_bpf_disabled sysctl未设置
+#### CVE 编号： CVE-2017-16995
 ### 漏洞测试环境
 ```
+
 ➜  ~ id
 
 uid=1002(test) gid=1002(test) groups=1002(test)
@@ -34,19 +29,16 @@ Linux ubuntu 4.4.0-87-generic #110-Ubuntu SMP Tue Jul 18 12:55:35 UTC 2017 x86_6
 
 ```
 ### 参考解决方案
-```
-通过修改内核参数限制普通用户使用bpf(BPF_PROG_LOAD)系统调用
+``
+非特权用户可以使用此漏洞在系统上升级其权限。
 
-echo 1 > /proc/sys/kernel/unprivileged_bpf_disabled
-__________________________________________________________________________________________________
+设置参数“kernel.unprivileged_bpf_disabled = 1”通过限制对bpf（2）调用的访问来防止这种特权升级
+___________________________________________________________________________________________________________________________
 
-echo "deb http://archive.ubuntu.com/ubuntu/  xenial-proposed restricted main multiverse universe" > /etc/apt/sources.list
+root@Ubuntu# echo 1 > /proc/sys/kernel/unprivileged_bpf_disabled
 
-apt update 
+______________________________________________________________________________________________________________________________
 
-apt install linux-image-4.4.0-117-generic
-
-reboot
 
 ```
 
