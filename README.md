@@ -3,7 +3,28 @@
 ### 漏洞范围： all 4.4 ubuntu aws instances are vulnerable
 #### Jann Horn发现在某些情况下，Linux内核中的Berkeley Packet Filter（BPF）实现不正确地执行了符号扩展check_alu_op()。本地攻击者可以使用它来导致拒绝服务（系统崩溃）或可能执行任意代码。（CVE-2017-16995）
 
-<jannh@google.com>
+```
+bpf: fix incorrect sign extension in check_alu_op()
+Distinguish between
+BPF_ALU64|BPF_MOV|BPF_K (load 32-bit immediate, sign-extended to 64-bit)
+and BPF_ALU|BPF_MOV|BPF_K (load 32-bit immediate, zero-padded to 64-bit);
+only perform sign extension in the first case.
+
+Starting with v4.14, this is exploitable by unprivileged users as long as
+the unprivileged_bpf_disabled sysctl isn't set.
+
+Debian assigned CVE-2017-16995 for this issue.
+
+v3:
+ - add CVE number (Ben Hutchings)
+
+Fixes: 484611357c19 ("bpf: allow access into map value arrays")
+Signed-off-by: Jann Horn <jannh@google.com>
+Acked-by: Edward Cree <ecree@solarflare.com>
+Signed-off-by: Alexei Starovoitov <ast@kernel.org>
+Signed-off-by: Daniel Borkmann <daniel@iogearbox.net>
+
+```
 
 #### 前提条件：unprivileged_bpf_disabled sysctl未设置
 #### CVE 编号： CVE-2017-16995
