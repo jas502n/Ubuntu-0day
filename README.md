@@ -2,6 +2,12 @@
 
 ### 漏洞范围： all 4.4 ubuntu aws instances are vulnerable
 
+从v4.14开始，只要不是root的用户可以利用它
+
+unprivileged_bpf_disabled sysctl未设置
+
+Debian为此问题分配了CVE-2017-16995
+
 ### 漏洞测试环境
 ```
 ➜  ~ id
