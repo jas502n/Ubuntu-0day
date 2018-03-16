@@ -29,10 +29,6 @@ Signed-off-by: Daniel Borkmann <daniel@iogearbox.net>
 #### 前提条件：unprivileged_bpf_disabled sysctl未设置
 #### CVE 编号： CVE-2017-16995
 #### 注意 如果不同的内核调整CRED偏移量+检查内核堆栈大小
-<<<<<<< HEAD
-
-=======
->>>>>>> 6cc487b7f936344fa2f39e4e8318caf6dc06f716
 ### 漏洞测试环境
 ```
 
@@ -56,10 +52,6 @@ Linux ubuntu 4.4.0-87-generic #110-Ubuntu SMP Tue Jul 18 12:55:35 UTC 2017 x86_6
 ```
 ### 参考解决方案
 ```
-<<<<<<< HEAD
-=======
-非特权用户可以使用此漏洞在系统上升级其权限。
->>>>>>> 6cc487b7f936344fa2f39e4e8318caf6dc06f716
 
 设置参数“kernel.unprivileged_bpf_disabled = 1”通过限制对bpf（2）调用的访问来防止这种特权升级
 ___________________________________________________________________________________________________________________________
@@ -119,10 +111,6 @@ root@ubuntu:/tmp# id
 uid=0(root) gid=0(root) groups=0(root) context=system_u:system_r:kernel_t:s0
 ```
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 6cc487b7f936344fa2f39e4e8318caf6dc06f716
 ### 参考链接
 
 https://access.redhat.com/security/cve/cve-2017-16995
