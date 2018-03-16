@@ -1,12 +1,15 @@
 # Ubuntu16.04-0day
 
 ### 漏洞范围： all 4.4 ubuntu aws instances are vulnerable
+### Jann Horn发现在某些情况下，Linux内核中的Berkeley Packet Filter（BPF）实现不正确地执行了符号扩展。本地攻击者可以使用它来导致拒绝服务（系统崩溃）或可能执行任意代码。（CVE-2017-16995）
+
+<jannh@google.com>
 
 从v4.14开始，只要不是root的用户可以利用它
 
 非特权用户可以使用此漏洞在系统上升级其权限。设置参数“kernel.unprivileged_bpf_disabled = 1”通过限制对bpf（2）调用的访问来防止这种特权升级
 
-unprivileged_bpf_disabled sysctl未设置
+前提条件：unprivileged_bpf_disabled sysctl未设置
 
 Debian为此问题分配了CVE-2017-16995
 
@@ -103,10 +106,15 @@ uid=0(root) gid=0(root) groups=0(root) context=system_u:system_r:kernel_t:s0
 
 https://access.redhat.com/security/cve/cve-2017-16995
 
-https://twitter.com/vnik5287/status/974439706896187392
+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=95a762e2c8c942780948091f8f2a4f32fce1ac6f
 
-http://cyseclabs.com/exploits/upstream44.c
+https://security-tracker.debian.org/tracker/CVE-2017-16995
+
+https://usn.ubuntu.com/3523-2/
+
+https://www.securityfocus.com/bid/102288
+
+https://github.com/torvalds/linux/commit/95a762e2c8c942780948091f8f2a4f32fce1ac6f
 
 
-![](./1.jpg)
 
