@@ -4,6 +4,8 @@
 
 从v4.14开始，只要不是root的用户可以利用它
 
+非特权用户可以使用此漏洞在系统上升级其权限。设置参数“kernel.unprivileged_bpf_disabled = 1”通过限制对bpf（2）调用的访问来防止这种特权升级
+
 unprivileged_bpf_disabled sysctl未设置
 
 Debian为此问题分配了CVE-2017-16995
@@ -99,12 +101,12 @@ uid=0(root) gid=0(root) groups=0(root) context=system_u:system_r:kernel_t:s0
 
 ### 参考链接
 
+https://access.redhat.com/security/cve/cve-2017-16995
+
 https://twitter.com/vnik5287/status/974439706896187392
 
 http://cyseclabs.com/exploits/upstream44.c
 
-https://www.exploit-db.com/exploits/39772/
 
 ![](./1.jpg)
 
-![](https://www.exploit-db.com/screenshots/idlt40000/screen-shot-2016-05-04-at-212446.png)
