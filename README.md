@@ -28,7 +28,7 @@ Signed-off-by: Daniel Borkmann <daniel@iogearbox.net>
 
 #### 前提条件：unprivileged_bpf_disabled sysctl未设置
 #### CVE 编号： CVE-2017-16995
-#### 注意 如果不同的内核调整CRED偏移量+检查内核堆栈大小
+#### 注意: 如果不同的内核调整CRED偏移量+检查内核堆栈大小
 ### 漏洞测试环境
 ```
 
