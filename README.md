@@ -10,6 +10,7 @@ apt update
 
 apt install linux-image-4.4.0-117-generic
 
+reboot
 
 ```
 
