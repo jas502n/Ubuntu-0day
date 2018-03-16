@@ -1,7 +1,7 @@
 # Ubuntu16.04-0day
 
 ### 漏洞范围： all 4.4 ubuntu aws instances are vulnerable
-#### Jann Horn发现在某些情况下，Linux内核中的Berkeley Packet Filter（BPF）实现不正确地执行了符号扩展check_alu_op()。本地攻击者可以使用它来导致拒绝服务（系统崩溃）或可能执行任意代码。（CVE-2017-16995）
+#####  Jann Horn发现在某些情况下，Linux内核中的Berkeley Packet Filter（BPF）不正确地执行了符号扩展check_alu_op()。本地攻击者可以使用它在系统上进行提权,获取root权限。
 
 ```
 bpf: fix incorrect sign extension in check_alu_op()
