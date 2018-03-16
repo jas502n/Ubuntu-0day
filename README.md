@@ -1,6 +1,6 @@
 # Ubuntu16.04-0day
 
-#### all 4.4 ubuntu aws instances are vulnerable
+### 漏洞范围： all 4.4 ubuntu aws instances are vulnerable
 
 ### 漏洞测试环境
 ```
