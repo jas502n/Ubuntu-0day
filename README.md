@@ -24,6 +24,10 @@ Linux ubuntu 4.4.0-87-generic #110-Ubuntu SMP Tue Jul 18 12:55:35 UTC 2017 x86_6
 ```
 ### 参考解决方案
 ```
+通过修改内核参数限制普通用户使用bpf(BPF_PROG_LOAD)系统调用
+
+echo 1 > /proc/sys/kernel/unprivileged_bpf_disabled
+__________________________________________________________________________________________________
 
 echo "deb http://archive.ubuntu.com/ubuntu/  xenial-proposed restricted main multiverse universe" > /etc/apt/sources.list
 
