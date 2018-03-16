@@ -101,7 +101,7 @@ Length: 5776 (5.6K) [application/octet-stream]
 Saving to: ‘/tmp/upstream44.c.1’
 
 upstream44.c.1                                       100%[==========================================================================>]   5.64k  --.-KB/s    in 0s
-2018-03-16 17:08:10 (186 MB/s) - ‘/tmp/upstream44.c.1’ saved [5776/5776]
+2018-03-16 17:08:10 (186 MB/s) - ‘/tmp/upstream44.c’ saved [5776/5776]
 
 task_struct = ffff880065821980
 uidptr = ffff880034edbe04
