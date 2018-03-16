@@ -97,4 +97,8 @@ https://twitter.com/vnik5287/status/974439706896187392
 
 http://cyseclabs.com/exploits/upstream44.c
 
+https://www.exploit-db.com/exploits/39772/
+
 ![](./1.jpg)
+
+![](https://www.exploit-db.com/screenshots/idlt40000/screen-shot-2016-05-04-at-212446.png)
