@@ -111,9 +111,8 @@ root@ubuntu:/tmp# id
 uid=0(root) gid=0(root) groups=0(root) context=system_u:system_r:kernel_t:s0
 
 ```
+
 #### 注意 如果不同的内核调整CRED偏移量+检查内核堆栈大小
-
-
 
 ### 参考链接
 
